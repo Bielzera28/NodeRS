@@ -1,7 +1,7 @@
 class UsersController {
   create(request,response) {
     const {name, email, age} = request.body;
-    response.json({name, email, age});
+    response.status(201).json({name, email, age});
   }
 
 }
