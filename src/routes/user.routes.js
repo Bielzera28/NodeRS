@@ -1,5 +1,7 @@
 const {Router} = require("express");
 const usersRoutes = Router()
+const UsersController = require("../controllers/UsersController")
+const usersController = new UsersController()
 
 /* METODO GET - ROUTE PARAMS
 app.get("/:id/:user", (request, response) => {
@@ -7,9 +9,6 @@ app.get("/:id/:user", (request, response) => {
   response.send(`Id da mensagem: ${id}. Nome do usuário ${user}`);
 }); */
 
-usersRoutes.post("/", (request, response) => {
-  const {name, email, age} = request.body;
-  response.json({name, email, age});
-})
+usersRoutes.post("/", usersController.create);
 
 module.exports = usersRoutes;
