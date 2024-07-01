@@ -12,7 +12,7 @@ app.use(routes);
 
 migrationsRun();
 
-app.use((error,request,response,next) => {
+/*app.use((error,request,response,next) => {
   if(error instanceof AppError) {
     return response.status(error.statusCode).json({
       status:"error",
@@ -24,7 +24,7 @@ app.use((error,request,response,next) => {
     message: "Internal server error"
   })
 
-})
+})*/
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
