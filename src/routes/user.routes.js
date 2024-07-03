@@ -6,9 +6,9 @@ const usersController = new UsersController()
 function myMiddleware(request, response, next) {
   console.log("Você passou pelo Middleware!")
   
-  if(!request.body.isAdmin){
+  /*if(!request.body.isAdmin){
     return response.json("user unauthorized")
-  }
+  }*/
 
   next()
 } 
@@ -20,6 +20,6 @@ app.get("/:id/:user", (request, response) => {
 }); */
 
 usersRoutes.post("/", myMiddleware, usersController.create);
-
+usersRoutes.put("/:id", usersController.update);
 
 module.exports = usersRoutes;
