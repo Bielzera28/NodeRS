@@ -21,4 +21,5 @@ app.get("/:id/:user", (request, response) => {
 
 usersRoutes.post("/", myMiddleware, usersController.create);
 
+
 module.exports = usersRoutes;
