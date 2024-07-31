@@ -40,7 +40,7 @@ class UsersController {
     const userWithUpdatedEmail = await database.get("SELECT * FROM users WHERE email = (?)", [email]);
 
     if(userWithUpdatedEmail && userWithUpdatedEmail.id !== user.id) {
-      throw new AppError("Este e-mail já está em uso.");
+      throw new AppError("Este e-mail já está sendo utilizado.");
     }
 
     user.name = name ?? user.name;
